@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _8.TradeComissions
+{
+    class tradeComissions
+    {
+        static void Main(string[] args)
+        {
+            string town = Console.ReadLine();
+            double turnover = double.Parse(Console.ReadLine());
+            var comision = -1.00;
+            if(town=="Sofia")
+            {
+                if (0 <= turnover && turnover <= 500)
+                    comision = 0.05;
+                else if (500 < turnover && turnover <= 1000)
+                    comision = 0.07;
+                else if (1000 < turnover && turnover <= 10000)
+                    comision = 0.08;
+                else if (10000 < turnover)
+                    comision = 0.12;
+            }
+            else if(town=="Varna")
+            {
+                if (0 <= turnover && turnover <= 500)
+                    comision = 0.045;
+                else if (500 < turnover && turnover <= 1000)
+                    comision = 0.075;
+                else if (1000 < turnover && turnover <= 10000)
+                    comision = 0.10;
+                else if (10000 < turnover)
+                    comision = 0.13;
+            }
+            else if(town=="Plovdiv")
+            {
+                if (0 <= turnover && turnover <= 500)
+                    comision = 0.055;
+                else if (500 < turnover && turnover <= 1000)
+                    comision = 0.08;
+                else if (1000 < turnover && turnover <= 10000)
+                    comision = 0.12;
+                else if (10000 < turnover)
+                    comision = 0.145;
+            }
+            if(comision>=0)
+            {
+                Console.WriteLine("{0:f2}",comision*turnover);
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
+}
